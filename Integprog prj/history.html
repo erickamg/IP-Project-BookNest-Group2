@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest — Borrowing History</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="logo-row">
+          <div class="logo">BookNest</div>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">☼</button>
+        </div>
+
+        <nav class="nav" aria-label="Sidebar navigation">
+          <a href="index.html">Dashboard</a>
+          <a href="browse.html">Browse Books</a>
+          <a href="my-books.html">My Borrowed</a>
+          <a href="history.html" class="active">Borrowing History</a>
+          <a href="profile.html">Profile</a>
+        </nav>
+
+        <nav class="nav nav-small" aria-label="Utility links">
+          <a href="login.html" data-logout>Logout</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <div class="panel">
+          <div class="inner-panel">
+            <div class="greeting-row">
+              <h1>Borrowing history</h1>
+              <div class="filters">
+                <span class="pill">All</span>
+                <span class="pill">Last 12 months</span>
+              </div>
+            </div>
+
+            <div class="list-panel" style="margin-top: 12px;">
+              <div class="borrowed-list">
+                <div class="borrow-row">
+                  <div class="book-info"><div class="minicover"></div><div><div class="book-title">History item</div><div class="book-author">Author</div></div></div>
+                  <div>02 Jun</div>
+                  <div>16 Jun</div>
+                  <div>Returned</div>
+                  <div><span class="pill success">Complete</span></div>
+                </div>
+
+                <div class="borrow-row">
+                  <div class="book-info"><div class="minicover"></div><div><div class="book-title">History item</div><div class="book-author">Author</div></div></div>
+                  <div>01 Apr</div>
+                  <div>28 Apr</div>
+                  <div>Late</div>
+                  <div><span class="pill warning">Action</span></div>
+                </div>
+
+                <div class="borrow-row">
+                  <div class="book-info"><div class="minicover"></div><div><div class="book-title">History item</div><div class="book-author">Author</div></div></div>
+                  <div>05 Aug</div>
+                  <div>19 Aug</div>
+                  <div>Open</div>
+                  <div><span class="pill danger">Due</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

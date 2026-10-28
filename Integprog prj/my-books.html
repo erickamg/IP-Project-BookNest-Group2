@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest — My Borrowed</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="logo-row">
+          <div class="logo">BookNest</div>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">☼</button>
+        </div>
+
+        <nav class="nav" aria-label="Sidebar navigation">
+          <a href="index.html">Dashboard</a>
+          <a href="browse.html">Browse Books</a>
+          <a href="my-books.html" class="active">My Borrowed</a>
+          <a href="history.html">Borrowing History</a>
+          <a href="profile.html">Profile</a>
+        </nav>
+
+        <nav class="nav nav-small" aria-label="Utility links">
+          <a href="login.html" data-logout>Logout</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <div class="panel">
+          <div class="inner-panel">
+            <div class="greeting-row">
+              <h1>My borrowed books</h1>
+              <div class="filters">
+                <button class="pill success loan-filter active" type="button" data-loan-filter="all" aria-pressed="true">All (3)</button>
+                <button class="pill loan-filter" type="button" data-loan-filter="due-soon" aria-pressed="false">Due soon</button>
+              </div>
+            </div>
+
+            <div class="list-panel" style="margin-top: 12px;">
+              <div class="borrowed-list">
+                <div class="borrow-row" style="background: rgba(255,255,255,0.12);">
+                  <div class="book-info"><div class="minicover"></div><div><div class="book-title">Current borrowed</div><div class="book-author">Author</div></div></div>
+                  <div><span class="pill danger">Overdue</span></div>
+                  <div>Due in 3 days</div>
+                  <div>Due date</div>
+                  <div class="table-actions"><button class="btn primary">Return</button></div>
+                </div>
+
+                <div class="borrow-row">
+                  <div class="book-info"><div class="minicover"></div><div><div class="book-title">Current borrowed</div><div class="book-author">Author</div></div></div>
+                  <div><span class="pill success">On track</span></div>
+                  <div>Due in 2 days</div>
+                  <div>Due date</div>
+                  <div class="table-actions"><button class="btn primary">Return</button></div>
+                </div>
+
+                <div class="borrow-row">
+                  <div class="book-info"><div class="minicover"></div><div><div class="book-title">Current borrowed</div><div class="book-author">Author</div></div></div>
+                  <div><span class="pill warning">Due soon</span></div>
+                  <div>Due in 11 days</div>
+                  <div>Due date</div>
+                  <div class="table-actions"><button class="btn primary">Return</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="modal-box">
+            <h3>Confirm return</h3>
+            <div class="modal-grid">
+              <span>Book</span><strong>Book title</strong>
+              <span>Borrow date</span><strong>01 Sep</strong>
+              <span>Return date</span><strong>15 Sep</strong>
+            </div>
+            <div class="form-actions">
+              <button class="btn">Cancel</button>
+              <button class="btn primary">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest — Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="logo-row">
+          <div class="logo">BookNest</div>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">☼</button>
+        </div>
+
+        <nav class="nav" aria-label="Sidebar navigation">
+          <a href="index.html" class="active">Dashboard</a>
+          <a href="browse.html">Browse Books</a>
+          <a href="my-books.html">My Borrowed</a>
+          <a href="history.html">Borrowing History</a>
+          <a href="profile.html">Profile</a>
+        </nav>
+
+        <nav class="nav nav-small" aria-label="Utility links">
+          <a href="login.html" data-logout>Logout</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <div class="panel dashboard-wrap">
+          <div class="greeting-row">
+            <h1>Welcome back</h1>
+            <button class="btn primary">Request</button>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span class="label">Borrowed</span>
+              <span class="value">3</span>
+            </div>
+            <div class="stat-box">
+              <span class="label">Due soon</span>
+              <span class="value">1</span>
+            </div>
+            <div class="stat-box">
+              <span class="label">Overdue</span>
+              <span class="value">0</span>
+            </div>
+            <div class="stat-box">
+              <span class="label">Returned</span>
+              <span class="value">12</span>
+            </div>
+          </div>
+
+          <div class="inner-panel" style="margin-top: 16px;">
+            <div class="frame-title"><span class="badge">✓</span> Currently borrowed</div>
+            <div class="book-strip">
+              <div class="book-tile">
+                <div class="cover"></div>
+                <div class="meta">
+                  <span class="tag">Due in 2 days</span>
+                  <div style="margin-top: 8px; font-weight: 700;">Borrowed item</div>
+                </div>
+              </div>
+
+              <div class="book-tile">
+                <div class="cover"></div>
+                <div class="meta">
+                  <span class="tag">Due in 7 days</span>
+                  <div style="margin-top: 8px; font-weight: 700;">Borrowed item</div>
+                </div>
+              </div>
+
+              <div class="book-tile">
+                <div class="cover"></div>
+                <div class="meta">
+                  <span class="tag">Due in 12 days</span>
+                  <div style="margin-top: 8px; font-weight: 700;">Borrowed item</div>
+                </div>
+              </div>
+
+              <div class="book-tile">
+                <div class="cover"></div>
+                <div class="meta">
+                  <span class="tag">Available</span>
+                  <div style="margin-top: 8px; font-weight: 700;">Featured title</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="inner-panel">
+            <div class="frame-title"><span class="badge">+</span> Browse books</div>
+            <div class="search-bar">
+              <input class="search-box" type="text" value="Search books or authors" aria-label="Search items" />
+              <button class="btn primary">Search</button>
+            </div>
+
+            <div class="catalog-grid">
+              <article class="catalog-card">
+                <div class="catalog-cover"></div>
+                <h3>Book title</h3>
+                <div class="author">Author</div>
+                <div class="meta-row"><span>Category</span><span class="label">Design</span></div>
+                <div class="meta-row"><span>Status</span><span class="label">Available</span></div>
+                <button class="btn primary">Borrow</button>
+              </article>
+
+              <article class="catalog-card">
+                <div class="catalog-cover"></div>
+                <h3>Book title</h3>
+                <div class="author">Author</div>
+                <div class="meta-row"><span>Category</span><span class="label">UX</span></div>
+                <div class="meta-row"><span>Status</span><span class="label">Available</span></div>
+                <button class="btn primary">Borrow</button>
+              </article>
+
+              <article class="catalog-card">
+                <div class="catalog-cover"></div>
+                <h3>Book title</h3>
+                <div class="author">Author</div>
+                <div class="meta-row"><span>Category</span><span class="label">HCI</span></div>
+                <div class="meta-row"><span>Status</span><span class="label">Available</span></div>
+                <button class="btn primary">Borrow</button>
+              </article>
+
+              <article class="catalog-card">
+                <div class="catalog-cover"></div>
+                <h3>Book title</h3>
+                <div class="author">Author</div>
+                <div class="meta-row"><span>Category</span><span class="label">Product</span></div>
+                <div class="meta-row"><span>Status</span><span class="label">Available</span></div>
+                <button class="btn primary">Borrow</button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

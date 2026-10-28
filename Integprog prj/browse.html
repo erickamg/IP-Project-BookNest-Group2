@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest — Browse Books</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="logo-row">
+          <div class="logo">BookNest</div>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">☼</button>
+        </div>
+
+        <nav class="nav" aria-label="Sidebar navigation">
+          <a href="index.html">Dashboard</a>
+          <a href="browse.html" class="active">Browse Books</a>
+          <a href="my-books.html">My Borrowed</a>
+          <a href="history.html">Borrowing History</a>
+          <a href="profile.html">Profile</a>
+        </nav>
+
+        <nav class="nav nav-small" aria-label="Utility links">
+          <a href="login.html" data-logout>Logout</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <div class="panel">
+          <div class="inner-panel">
+            <div class="greeting-row">
+              <h1>Browse books</h1>
+              <button class="btn">Filter</button>
+            </div>
+
+            <div class="search-bar">
+              <select class="btn filter-select" id="category-filter" aria-label="Filter by category">
+                <option value="">All categories</option>
+                <option>Creativity</option>
+                <option>Design</option>
+                <option>Fiction</option>
+                <option>Memoir</option>
+                <option>Personal Growth</option>
+                <option>Psychology</option>
+                <option>Science Fiction</option>
+              </select>
+              <select class="btn filter-select" id="year-filter" aria-label="Filter by publication year">
+                <option value="">Any publication year</option>
+                <option value="2020">2020 or newer</option>
+                <option value="2015">2015 or newer</option>
+                <option value="2010">2010 or newer</option>
+              </select>
+              <input class="search-box" type="search" aria-label="Search books" placeholder="Search by title or author" />
+            </div>
+
+            <div class="catalog-grid">
+              <article class="catalog-card">
+                <div class="catalog-cover"></div>
+                <h3>Design title</h3>
+                <div class="author">Author</div>
+                <div class="meta-row"><span>Category</span><span class="label">Design</span></div>
+                <div class="meta-row"><span>Availability</span><span class="label">3 / 5</span></div>
+                <button class="btn primary">Borrow</button>
+              </article>
+
+              <article class="catalog-card">
+                <div class="catalog-cover"></div>
+                <h3>UX title</h3>
+                <div class="author">Author</div>
+                <div class="meta-row"><span>Category</span><span class="label">UX</span></div>
+                <div class="meta-row"><span>Availability</span><span class="label">2 / 4</span></div>
+                <button class="btn primary">Borrow</button>
+              </article>
+
+              <article class="catalog-card">
+                <div class="catalog-cover"></div>
+                <h3>System title</h3>
+                <div class="author">Author</div>
+                <div class="meta-row"><span>Category</span><span class="label">Systems</span></div>
+                <div class="meta-row"><span>Availability</span><span class="label">1 / 3</span></div>
+                <button class="btn primary">Borrow</button>
+              </article>
+
+              <article class="catalog-card">
+                <div class="catalog-cover"></div>
+                <h3>Product title</h3>
+                <div class="author">Author</div>
+                <div class="meta-row"><span>Category</span><span class="label">Product</span></div>
+                <div class="meta-row"><span>Availability</span><span class="label">4 / 5</span></div>
+                <button class="btn primary">Borrow</button>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="inner-panel">
+            <div class="frame-title"><span class="badge">✓</span> Recent activity</div>
+            <div class="list-panel">
+              <div class="list-header">
+                <h2>Borrowing activity</h2>
+                <div class="filters">
+                  <span class="pill">Status: All</span>
+                  <span class="pill">This month</span>
+                </div>
+              </div>
+
+              <div class="borrowed-list">
+                <div class="borrow-row">
+                  <div class="book-info"><div class="minicover"></div><div><div class="book-title">Record title</div><div class="book-author">Detail</div></div></div>
+                  <div>02 Jun</div>
+                  <div>16 Jun</div>
+                  <div>Returned</div>
+                  <div><span class="pill success">Done</span></div>
+                </div>
+
+                <div class="borrow-row">
+                  <div class="book-info"><div class="minicover"></div><div><div class="book-title">Record title</div><div class="book-author">Detail</div></div></div>
+                  <div>01 Apr</div>
+                  <div>28 Apr</div>
+                  <div>Late</div>
+                  <div><span class="pill warning">Follow up</span></div>
+                </div>
+
+                <div class="borrow-row">
+                  <div class="book-info"><div class="minicover"></div><div><div class="book-title">Record title</div><div class="book-author">Detail</div></div></div>
+                  <div>05 Aug</div>
+                  <div>19 Aug</div>
+                  <div>Open</div>
+                  <div><span class="pill danger">Due</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
