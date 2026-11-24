@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest — User accounts and roles</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="logo-row">
+          <div class="logo">BookNest</div>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">☼</button>
+        </div>
+        <nav class="nav" aria-label="Administrator navigation">
+          <a href="administrator.html">Dashboard overview</a>
+          <a href="administrator-rules.html">Library rules</a>
+          <a href="administrator-staff.html">Create staff account</a>
+          <a href="administrator-users.html" class="active">User accounts and roles</a>
+        </nav>
+        <nav class="nav nav-small" aria-label="Utility links">
+          <a href="login.html" data-logout>Logout</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <div class="panel">
+          <div class="inner-panel">
+            <div class="frame-title"><span class="badge">♙</span> User accounts and roles</div>
+            <div id="administrator-users" class="role-list" aria-live="polite"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

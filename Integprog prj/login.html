@@ -25,9 +25,9 @@
         <div class="login-form-wrap">
           <p class="eyebrow">MEMBER ACCESS</p>
           <h2 id="login-heading">Welcome to BookNest</h2>
-          <p class="login-intro">Sign in to manage your reading and borrowing.</p>
+          <p class="login-intro" id="login-intro">Sign in to manage your reading and borrowing.</p>
 
-          <form id="login-form" class="login-form">
+          <form id="login-form" class="login-form" aria-labelledby="login-heading">
             <div class="field">
               <label for="login-email">Email address</label>
               <input id="login-email" name="email" type="email" autocomplete="username" placeholder="you@example.com" required />
@@ -40,12 +40,38 @@
             <button class="btn primary login-submit" type="submit">Sign in <span aria-hidden="true">→</span></button>
           </form>
 
-          <div class="demo-access">
+          <form id="signup-form" class="login-form" aria-labelledby="login-heading" hidden>
+            <div class="field">
+              <label for="signup-name">Full name</label>
+              <input id="signup-name" name="name" type="text" autocomplete="name" maxlength="120" placeholder="Your full name" required />
+            </div>
+            <div class="field">
+              <label for="signup-email">Email address</label>
+              <input id="signup-email" name="email" type="email" autocomplete="email" maxlength="190" placeholder="you@example.com" required />
+            </div>
+            <div class="field">
+              <label for="signup-password">Password</label>
+              <input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="72" placeholder="At least 8 characters" required />
+            </div>
+            <div class="field">
+              <label for="signup-confirm-password">Confirm password</label>
+              <input id="signup-confirm-password" name="confirm-password" type="password" autocomplete="new-password" minlength="8" maxlength="72" placeholder="Enter your password again" required />
+            </div>
+            <p class="login-error" id="signup-error" role="alert" aria-live="polite" hidden></p>
+            <button class="btn primary login-submit" type="submit">Create account <span aria-hidden="true">→</span></button>
+          </form>
+
+          <p class="login-switch">
+            <span id="login-switch-prompt">New to BookNest?</span>
+            <button class="login-switch-button" id="toggle-auth-mode" type="button">Create an account</button>
+          </p>
+
+          <div class="demo-access" id="demo-access">
             <div class="demo-access-heading"><span>DEMO ACCOUNT</span><span class="demo-indicator">● Ready to try</span></div>
             <div class="demo-credentials"><span>Email</span><strong>admin@test.test</strong><span>Password</span><strong>admin123</strong></div>
             <button class="btn demo-fill" id="use-demo" type="button">Use demo account</button>
           </div>
-          <p class="login-disclaimer">Demo sign-in only. No account or password is sent to a server.</p>
+          <p class="login-disclaimer">Your account and library data are stored in the local BookNest database.</p>
         </div>
       </section>
     </main>

@@ -28,44 +28,51 @@
       </aside>
 
       <main class="content">
-        <div class="panel form-panel">
-          <div class="frame-title"><span class="badge">✎</span> Profile</div>
+        <section class="panel profile-overview" aria-labelledby="profile-display-name">
+          <div class="profile-avatar" id="profile-avatar" aria-hidden="true">
+            <span id="profile-initials">B</span>
+            <img id="profile-avatar-image" alt="" hidden />
+          </div>
+          <div class="profile-overview-details">
+            <div class="frame-title"><span class="badge">✎</span> Profile</div>
+            <h1 class="profile-summary-name" id="profile-display-name"></h1>
+            <p class="profile-summary-line" id="profile-display-email"></p>
+            <span class="profile-role" id="profile-account-type">Borrower account</span>
+          </div>
+          <div class="profile-photo-controls">
+            <label for="profile-photo-input">Profile picture</label>
+            <input id="profile-photo-input" class="profile-file-input" type="file" accept="image/jpeg,image/png,image/webp" />
+            <button class="btn" id="profile-photo-remove" type="button" hidden>Remove picture</button>
+            <p class="muted-copy">JPEG, PNG, or WebP; up to 5 MB.</p>
+            <p class="form-notice" id="profile-photo-notice" role="status" aria-live="polite" hidden></p>
+          </div>
+        </section>
+
+        <section class="panel form-panel">
+          <h2 class="section-title">Personal information</h2>
           <form class="form-box" id="profile-form">
             <div class="field">
               <label for="profile-name">Full name</label>
-              <input id="profile-name" name="name" type="text" value="" placeholder="Student full name" required />
+              <input id="profile-name" name="name" type="text" maxlength="120" required />
             </div>
             <div class="field">
               <label for="profile-email">Email</label>
-              <input id="profile-email" name="email" type="email" value="" placeholder="student@email.com" required />
+              <input id="profile-email" name="email" type="email" maxlength="190" required />
             </div>
             <div class="field">
               <label for="profile-phone">Phone</label>
-              <input id="profile-phone" name="phone" type="tel" value="" placeholder="Add phone number" />
-            </div>
-            <div class="field">
-              <label for="profile-password">Change password</label>
-              <input id="profile-password" name="password" type="password" value="" placeholder="Password changes are unavailable in demo mode" disabled />
+              <input id="profile-phone" name="phone" type="tel" maxlength="40" placeholder="Add phone number" />
             </div>
 
-            <div class="form-actions">
+            <div class="form-actions profile-actions">
+              <a class="btn" href="change-password.html">Change password</a>
+              <span class="action-spacer"></span>
               <button class="btn" type="reset">Cancel</button>
               <button class="btn primary" type="submit">Save changes</button>
             </div>
             <p class="form-notice" id="profile-notice" role="status" aria-live="polite" hidden></p>
           </form>
-        </div>
-
-        <div class="panel form-panel">
-          <div class="empty-state">
-            <div>
-              <div class="icon"></div>
-              <div style="font-size: 1rem; font-weight: 700; color: var(--text);">No records yet</div>
-              <div style="margin-top: 8px;">Your account details will appear here.</div>
-              <button class="btn" style="margin-top: 12px;">Refresh</button>
-            </div>
-          </div>
-        </div>
+        </section>
       </main>
     </div>
     <script src="script.js"></script>

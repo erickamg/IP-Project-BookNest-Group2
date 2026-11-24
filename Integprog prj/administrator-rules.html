@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest — Library rules</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="logo-row">
+          <div class="logo">BookNest</div>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">☼</button>
+        </div>
+        <nav class="nav" aria-label="Administrator navigation">
+          <a href="administrator.html">Dashboard overview</a>
+          <a href="administrator-rules.html" class="active">Library rules</a>
+          <a href="administrator-staff.html">Create staff account</a>
+          <a href="administrator-users.html">User accounts and roles</a>
+        </nav>
+        <nav class="nav nav-small" aria-label="Utility links">
+          <a href="login.html" data-logout>Logout</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <div class="panel">
+          <div class="inner-panel">
+            <div class="frame-title"><span class="badge">⚙</span> Library rules</div>
+            <p class="muted-copy">These rules apply to new loans, renewals, borrower limits, and overdue fine estimates.</p>
+            <form class="form-box role-form" id="rules-form">
+              <div class="role-form-grid">
+                <div class="field"><label for="rule-loan-period">Loan period (days)</label><input id="rule-loan-period" type="number" min="1" max="365" required /></div>
+                <div class="field"><label for="rule-max-loans">Maximum active loans</label><input id="rule-max-loans" type="number" min="1" max="50" required /></div>
+                <div class="field"><label for="rule-renewal-limit">Renewal limit</label><input id="rule-renewal-limit" type="number" min="0" max="20" required /></div>
+                <div class="field"><label for="rule-fine-rate">Late fine per day (₱)</label><input id="rule-fine-rate" type="number" min="0" max="9999" step="0.01" required /></div>
+              </div>
+              <div class="form-actions"><button class="btn primary" type="submit">Save rules</button></div>
+              <p class="form-notice" id="rules-notice" role="status" hidden></p>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

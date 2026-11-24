@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest — Active loans and returns</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="logo-row">
+          <div class="logo">BookNest</div>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">☼</button>
+        </div>
+        <nav class="nav" aria-label="Librarian navigation">
+          <a href="librarian.html">Dashboard overview</a>
+          <a href="librarian-catalog.html">Catalog management</a>
+          <a href="librarian-reservations.html">Reservation requests</a>
+          <a href="librarian-loans.html" class="active">Active loans and returns</a>
+          <a href="librarian-borrowers.html">Borrower accounts</a>
+        </nav>
+        <nav class="nav nav-small" aria-label="Utility links">
+          <a href="login.html" data-logout>Logout</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <div class="panel">
+          <div class="inner-panel">
+            <div class="frame-title"><span class="badge">↩</span> Active loans and returns</div>
+            <div id="librarian-loans" class="role-list" aria-live="polite"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

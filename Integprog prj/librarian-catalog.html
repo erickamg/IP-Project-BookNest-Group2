@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest — Catalog management</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="logo-row">
+          <div class="logo">BookNest</div>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">☼</button>
+        </div>
+        <nav class="nav" aria-label="Librarian navigation">
+          <a href="librarian.html">Dashboard overview</a>
+          <a href="librarian-catalog.html" class="active">Catalog management</a>
+          <a href="librarian-reservations.html">Reservation requests</a>
+          <a href="librarian-loans.html">Active loans and returns</a>
+          <a href="librarian-borrowers.html">Borrower accounts</a>
+        </nav>
+        <nav class="nav nav-small" aria-label="Utility links">
+          <a href="login.html" data-logout>Logout</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <div class="panel">
+          <div class="inner-panel">
+            <div class="frame-title"><span class="badge">+</span> Catalog management</div>
+            <form class="form-box role-form" id="book-form">
+              <input id="book-id" name="id" type="hidden" />
+              <div class="role-form-grid">
+                <div class="field"><label for="book-title">Title</label><input id="book-title" name="title" maxlength="200" required /></div>
+                <div class="field"><label for="book-author">Author</label><input id="book-author" name="author" maxlength="200" required /></div>
+                <div class="field"><label for="book-subject">Subject</label><input id="book-subject" name="subject" maxlength="100" required /></div>
+                <div class="field"><label for="book-category">Category</label><input id="book-category" name="category" maxlength="100" required /></div>
+                <div class="field"><label for="book-isbn">ISBN (optional)</label><input id="book-isbn" name="isbn" maxlength="20" /></div>
+                <div class="field"><label for="book-year">Publication year</label><input id="book-year" name="year" type="number" min="1000" max="2100" required /></div>
+                <div class="field"><label for="book-total">Total copies</label><input id="book-total" name="total" type="number" min="0" max="1000" required /></div>
+              </div>
+              <div class="form-actions">
+                <button class="btn" id="book-form-cancel" type="reset">Clear</button>
+                <button class="btn primary" type="submit">Save book</button>
+              </div>
+              <p class="form-notice" id="book-form-notice" role="status" hidden></p>
+            </form>
+            <div id="librarian-catalog" class="role-list" aria-live="polite"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

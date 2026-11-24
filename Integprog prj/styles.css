@@ -105,6 +105,11 @@ button:disabled {
 
 .sidebar {
   width: 240px;
+  position: sticky;
+  top: 18px;
+  align-self: flex-start;
+  height: calc(100vh - 40px);
+  overflow-y: auto;
   background: var(--sidebar-bg);
   border: 1px solid var(--border);
   border-right: none;
@@ -635,6 +640,90 @@ button.pill {
   box-shadow: var(--shadow-card);
 }
 
+.role-form {
+  margin: 16px 0;
+}
+
+.role-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0 14px;
+}
+
+.role-form-grid .field {
+  min-width: 0;
+}
+
+.role-form-grid input,
+.role-form-grid select,
+.role-user-controls select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  padding: 9px 11px;
+  color: var(--text);
+}
+
+.role-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.role-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--gradient-soft);
+}
+
+.role-row-main {
+  min-width: 0;
+}
+
+.role-row-title {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.role-row-meta,
+.muted-copy {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.role-row-meta {
+  overflow-wrap: anywhere;
+}
+
+.role-actions,
+.role-user-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.role-user-controls select {
+  width: auto;
+  min-width: 130px;
+}
+
+.role-empty {
+  padding: 18px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
 .field {
   margin-bottom: 14px;
 }
@@ -675,6 +764,10 @@ button.pill {
   margin: 12px 0 0;
   color: var(--green);
   font-size: 13px;
+}
+
+.notice-error {
+  color: var(--red);
 }
 
 .catalog-empty {
@@ -755,6 +848,101 @@ button.pill {
   font-size: 13px;
 }
 
+.profile-overview {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(180px, 230px);
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.profile-avatar {
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--gradient-soft);
+  color: var(--text);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-overview-details {
+  min-width: 0;
+}
+
+.profile-overview-details .frame-title {
+  margin-bottom: 8px;
+}
+
+.profile-overview-details .profile-summary-name {
+  margin: 0;
+  font-size: 1.35rem;
+  overflow-wrap: anywhere;
+}
+
+.profile-role {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.profile-photo-controls {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+}
+
+.profile-photo-controls label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.profile-file-input {
+  max-width: 100%;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.profile-photo-controls .muted-copy,
+.profile-photo-controls .form-notice {
+  margin: 0;
+}
+
+.profile-actions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.profile-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.action-spacer {
+  flex: 1;
+}
+
+.section-title {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
 .two-col {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -789,6 +977,20 @@ button.pill {
   }
 
   .sidebar {
+    position: static;
+    height: auto;
+    overflow: visible;
+  }
+
+  .profile-overview {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .profile-photo-controls {
+    grid-column: 1 / -1;
+  }
+
+  .sidebar {
     width: 100%;
     border-right: 1px solid var(--border);
     margin-bottom: 12px;
@@ -799,6 +1001,17 @@ button.pill {
   .book-strip,
   .two-col {
     grid-template-columns: 1fr;
+  }
+
+  .role-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .role-actions,
+  .role-user-controls {
+    justify-content: flex-start;
+    width: 100%;
   }
 
   .borrow-row {
@@ -977,6 +1190,26 @@ button.pill {
   margin: -4px 0 14px;
   color: var(--red);
   font-size: 13px;
+}
+
+.login-switch {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 20px 0 0;
+  font-size: 13px;
+}
+
+.login-switch-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
 }
 
 .demo-access {

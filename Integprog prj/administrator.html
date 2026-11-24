@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNest — Administrator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="logo-row">
+          <div class="logo">BookNest</div>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">☼</button>
+        </div>
+        <nav class="nav" aria-label="Administrator navigation">
+          <a href="administrator.html" class="active">Dashboard overview</a>
+          <a href="administrator-rules.html">Library rules</a>
+          <a href="administrator-staff.html">Create staff account</a>
+          <a href="administrator-users.html">User accounts and roles</a>
+        </nav>
+        <nav class="nav nav-small" aria-label="Utility links">
+          <a href="login.html" data-logout>Logout</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <div class="panel dashboard-wrap">
+          <div class="greeting-row"><h1>Administrator dashboard</h1><span class="pill">System overview</span></div>
+          <p class="muted-copy">Choose a section from the sidebar to configure library rules or manage staff and user accounts.</p>
+          <div class="stats-grid">
+            <div class="stat-box"><span class="label">Active borrowers</span><span class="value" data-stat="active_borrowers">0</span></div>
+            <div class="stat-box"><span class="label">Active books</span><span class="value" data-stat="active_books">0</span></div>
+            <div class="stat-box"><span class="label">Active loans</span><span class="value" data-stat="active_loans">0</span></div>
+            <div class="stat-box"><span class="label">Overdue loans</span><span class="value" data-stat="overdue_loans">0</span></div>
+            <div class="stat-box"><span class="label">Pending requests</span><span class="value" data-stat="pending_reservations">0</span></div>
+            <div class="stat-box"><span class="label">Estimated fines (₱)</span><span class="value" id="estimated-fines">0.00</span></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
